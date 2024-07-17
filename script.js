@@ -8,11 +8,6 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
-function formatSelection(selection) {
-    let formattedSelection = selection.slice(0, 1).toUpperCase() + selection.slice(1).toLowerCase();
-    return formattedSelection;
-}
-
 function playASingleRound(playerSelection, computerSelection) {
     let roundResult = "";
     playerSelection = playerSelection.toLowerCase();
