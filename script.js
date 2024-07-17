@@ -66,4 +66,9 @@ function selectButtonsAndRemoveListeners() {
     buttons.forEach(button => button.removeEventListener("click", playASingleRound));
 }
 
-selectButtonsAndAddListeners();
+
+function playGame(){
+    selectButtonsAndAddListeners();
+}
+
+playGame();
