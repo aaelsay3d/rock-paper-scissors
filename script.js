@@ -44,11 +44,13 @@ function evaluateGameStatus(playerScore, computerScore) {
         finalMessage.style.color = "green";
         finalMessage.style.fontWeight = "bold";
         resultsArea.appendChild(finalMessage);
+        selectButtonsAndRemoveListeners()
     } else if (computerScore === 5) {
         finalMessage.textContent = "YOU LOST THE GAME :(";
         finalMessage.style.color = "red";
         finalMessage.style.fontWeight = "bold";
         resultsArea.appendChild(finalMessage);
+        selectButtonsAndRemoveListeners()
     }
 }
 
@@ -56,6 +58,12 @@ function evaluateGameStatus(playerScore, computerScore) {
 function selectButtonsAndAddListeners() {
     let buttons = document.querySelectorAll("button");
     buttons.forEach(button => button.addEventListener("click", playASingleRound));
+}
+
+
+function selectButtonsAndRemoveListeners() {
+    let buttons = document.querySelectorAll("button");
+    buttons.forEach(button => button.removeEventListener("click", playASingleRound));
 }
 
 selectButtonsAndAddListeners();
@@ -69,7 +77,8 @@ of course it will not take the playerselection nor the computerselection as argu
 will pass an e object to it and extract the player selection from it (done)
 and will get the computer selection using getcomputerchoice function (done)
 after each round i will end up with a message for the round will change it and update the score (done)
-but before changing anything will check if there is a winner by running another function at the top of event handler function
-what will this function do it will print final message green if won red if lost and remove the even listener and will
+but before changing anything will check if there is a winner by running another function at the top of event handler function(done)
+what will this function do it will print final message green if won red if lost and (done)
+remove the even listener and will
 create another button after this function is executed that will add the event listeners again reset the scores and deletes logs
 */
