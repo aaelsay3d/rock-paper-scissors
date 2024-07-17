@@ -28,12 +28,3 @@ function playASingleRound(playerSelection, computerSelection) {
 
     return roundResult;
 }
-
-function checkChoice(choice) {
-    let choices = ["rock", "paper", "scissors"];
-    choice = choice.toLowerCase();
-    return choices.includes(choice);
-}
-
-
-playGame();
