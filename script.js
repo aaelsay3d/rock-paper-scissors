@@ -32,10 +32,24 @@ function playASingleRound(event) {
     let computerScoreArea = document.querySelector(".computer-score-area");
     playerScoreArea.textContent = `Player Score : ${playerScore}`;
     computerScoreArea.textContent = `Computer Score : ${computerScore}`;
+
+    evaluateGameStatus(playerScore, computerScore);
 }
 
-function evaluateGameStatus() {
-
+function evaluateGameStatus(playerScore, computerScore) {
+    let finalMessage = document.createElement("p");
+    let resultsArea = document.querySelector(".results-area");
+    if (playerScore === 5) {
+        finalMessage.textContent = "YOU WON THE GAME :)";
+        finalMessage.style.color = "green";
+        finalMessage.style.fontWeight = "bold";
+        resultsArea.appendChild(finalMessage);
+    } else if (computerScore === 5) {
+        finalMessage.textContent = "YOU LOST THE GAME :(";
+        finalMessage.style.color = "red";
+        finalMessage.style.fontWeight = "bold";
+        resultsArea.appendChild(finalMessage);
+    }
 }
 
 
